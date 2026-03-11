@@ -1,0 +1,16 @@
+{
+  "name": "Auster Graphic",
+  "short_name": "Auster",
+  "description": "Gráfica profissional - Cartões de visita, panfletos, encadernações e impressões de alta qualidade.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#22C55E",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
