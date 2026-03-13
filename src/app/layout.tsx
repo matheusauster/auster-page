@@ -81,8 +81,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your Google Search Console verification code here
-    // google: "your-verification-code",
+ google: "SxzhT_Eiw0-6pfQEanYkiyk5oGS5nwoo9IiZjpH9saQ",
   },
   category: "business",
 };
