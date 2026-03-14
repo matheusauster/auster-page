@@ -4,6 +4,8 @@ import { useScrollAnimation } from "@/components/useScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import Link from "next/link";
+import { useEffect } from "react";
 
 const allPosts = [
   {
@@ -46,6 +48,33 @@ const allPosts = [
 
 export default function BlogPage() {
   useScrollAnimation();
+
+  useEffect(() => {
+    // Update meta tags for blog page
+    document.title = "Blog - Dicas de Design Gráfico e Comunicação Visual | Auster Graphic";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Artigos, dicas e tendências sobre design gráfico, impressão, identidade visual e comunicação visual. Aprenda com os especialistas da Auster Graphic.");
+    }
+    
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://austergraphic.com/blog");
+    
+    return () => {
+      // Restore home page meta on unmount
+      const title = document.querySelector('title');
+      if (title) {
+        title.textContent = "Auster Graphic | Gráfica Profissional - Cartões, Panfletos e Impressões";
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -94,7 +123,7 @@ export default function BlogPage() {
           </div>
 
           <div className="text-center mt-12 animate-on-scroll">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-[var(--color-border)] text-[var(--color-text)] font-semibold text-sm hover:border-[var(--color-brand)] hover:text-[var(--color-brand)] transition-all duration-200 hover:-translate-y-0.5"
             >
@@ -102,7 +131,7 @@ export default function BlogPage() {
                 <line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" />
               </svg>
               Voltar ao início
-            </a>
+            </Link>
           </div>
         </div>
       </main>

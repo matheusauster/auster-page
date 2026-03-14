@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "./ThemeProvider";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Pedidos", href: "#pedidos" },
-  { label: "Blog", href: "#blog" },
-  { label: "Dúvidas", href: "#duvidas" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Pedidos", href: "/#pedidos" },
+  { label: "Blog", href: "/blog" },
+  { label: "Dúvidas", href: "/#duvidas" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export default function Navbar() {
@@ -41,25 +42,25 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-[var(--color-brand)] flex items-center justify-center">
               <span className="text-white font-bold text-sm">AG</span>
             </div>
             <span className="text-lg font-bold tracking-tight text-[var(--color-text)] group-hover:text-[var(--color-brand)] transition-colors">
               Auster <span className="text-[var(--color-brand)]">Graphic</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="px-4 py-2 rounded-lg text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-brand)] hover:bg-[var(--color-brand)]/10 transition-all duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -118,14 +119,14 @@ export default function Navbar() {
       >
         <div className="px-4 pb-4 pt-2 bg-[var(--color-bg)]/95 backdrop-blur-md border-t border-[var(--color-border)]">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className="block px-4 py-3 rounded-lg text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-brand)] hover:bg-[var(--color-brand)]/10 transition-all duration-200"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
