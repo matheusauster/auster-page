@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://austergraphic.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.matheusauster.com.br/";
 const SITE_NAME = "Auster Graphic";
 const SITE_DESCRIPTION =
   "Auster Graphic - Gráfica profissional especializada em cartões de visita, panfletos, receituários, encadernações espiral e wire-o, e impressões em alta qualidade. Atendimento rápido via WhatsApp. Soluções gráficas modernas para empresas que querem se destacar.";
