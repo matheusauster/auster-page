@@ -3,8 +3,18 @@ export default function HeroSection() {
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--color-brand)]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--color-brand)]/15 rounded-full blur-3xl" />
+        {/* Color overlay for branding effect */}
+        <div className="absolute inset-0 opacity-20 mix-blend-overlay">
+          <div
+            className="absolute top-0 left-0 w-full h-1/2"
+            style={{ backgroundColor: '#22C55E' }}
+          />
+          <div
+            className="absolute bottom-0 right-0 w-3/4 h-3/4 rounded-tl-[4rem]"
+            style={{ backgroundColor: '#0A0A0A' }}
+          />
+        </div>
+        
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: "linear-gradient(var(--color-text) 1px, transparent 1px), linear-gradient(90deg, var(--color-text) 1px, transparent 1px)",
